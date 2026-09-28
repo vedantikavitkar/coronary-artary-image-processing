@@ -1,0 +1,39 @@
+# Verified resolvable on Python 3.11 (pip --dry-run).
+# Python 3.13 is NOT supported: gradio 3.39 is pydantic-v1 code and pydantic 1.x
+# has no 3.13 build. Use a 3.11 interpreter, e.g.  py -3.11 -m venv .venv
+#
+# Gradio 3.39 needs these transitive caps; do not relax them:
+#   gradio_client 0.8.x -- gradio 3.39 imports gradio_client.serializing,
+#                          removed in gradio_client 1.0; gradio's own pin
+#                          (gradio-client>=0.3.0) has no upper bound, so pip
+#                          otherwise installs 2.x and the import fails
+#   pydantic <2  -- gradio 3.x models are pydantic-v1
+#   altair 4.x   -- altair 5 removed APIs gradio 3.x imports
+#   huggingface_hub 0.25.x -- hub 1.x removed APIs gradio 3.x uses
+#   httpx <0.28, websockets <12
+# For a CPU-only torch (much smaller download), add before the requirements:
+#   pip install torch==2.5.1 torchvision==0.20.1 --index-url https://download.pytorch.org/whl/cpu
+
+gradio==3.39.0
+gradio_client==0.8.1
+pydantic==1.10.22
+fastapi==0.111.1
+starlette==0.37.2
+httpx==0.27.2
+websockets==11.0.3
+huggingface_hub==0.25.2
+altair==4.2.2
+pandas==2.0.3
+numpy==1.26.4
+pillow==10.4.0
+matplotlib==3.9.2
+torch==2.5.1
+torchvision==0.20.1
+opencv-python-headless==4.10.0.84
+scikit-image==0.24.0
+albumentations==1.3.1
+pydicom==2.4.4
+tqdm==4.67.1
+
+# Needed only by train.py / finetune.py (mlflow experiment tracking), not by demo.py:
+# mlflow==2.17.2

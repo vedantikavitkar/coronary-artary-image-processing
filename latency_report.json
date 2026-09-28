@@ -1,0 +1,41 @@
+[
+  {
+    "name": "realtime",
+    "frames": 400,
+    "avg_ms": 16.59416875038005,
+    "min_ms": 11.11720000335481,
+    "max_ms": 33.18779999972321,
+    "median_ms": 16.160549996129703,
+    "p95_ms": 21.222790006868294,
+    "p99_ms": 25.153455004328855,
+    "std_ms": 2.7744589280248433,
+    "fps": 60.262132743292575,
+    "budget_ms": 36.0,
+    "violations": 0,
+    "passed": true,
+    "resolution": "512x512",
+    "cpu_avg_ms": 27.265625,
+    "host_load_pct": 30.46875,
+    "stages_ms": {
+      "ingest": 0.947145750214986,
+      "preprocess": 1.337411249660363,
+      "background_subtraction": 2.3436410002977937,
+      "vessel_enhancement": 4.352541249791102,
+      "rib_vessel_cleanup": 1.736238000485173,
+      "output": 4.22736150030687
+    },
+    "hardware": {
+      "cpu": "11th Gen Intel(R) Core(TM) i5-1155G7 @ 2.50GHz",
+      "logical_cores": 8,
+      "ram_gb": 7.8,
+      "platform": "Windows 10 (AMD64)",
+      "python": "3.11.4",
+      "torch": "2.5.1+cpu",
+      "torch_threads": 4,
+      "cuda_available": false,
+      "opencv": "4.10.0",
+      "opencv_threads": 8,
+      "numpy": "1.26.4"
+    }
+  }
+]
